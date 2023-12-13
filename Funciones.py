@@ -1,4 +1,4 @@
-from arbol import *
+from FinalProyectAlgoritmos.arbol import *
 from sec_class import sec_class
 
 def buscar_mutaciones(reference, secuencias):
@@ -239,7 +239,19 @@ def insert_sec(referencia, secuencias):
     secuencias.append(secu)
     buscar_mutaciones(referencia, secuencias)
     es_polimorfismo(secuencias)
+    ordenar_id(secuencias)
 # complejidad: O(N^3*log2(N))
+
+
+def ordenar_id(secuencias):
+    lista_ordenada = []
+    arbol = None
+    for i in range(len(secuencias)):
+        arbol = insertarNodo_id(arbol, secuencias[i])
+    devolver_lista(arbol, lista_ordenada)
+
+    return lista_ordenada
+# complejidad: O(N)   
 
 
 def imprimir_mutaciones(secuencias):

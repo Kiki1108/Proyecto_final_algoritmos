@@ -1,7 +1,7 @@
 from reference import referencia
 from secuencias import secuencias
 from sec_class import sec_class
-from Funciones import *
+from FinalProyectAlgoritmos.Funciones import *
 
 print("CARGANDO...")
 
