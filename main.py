@@ -1,15 +1,15 @@
-from reference import referencia
-from sec_class import sec_class
-from Funciones import *
+from data.sec_class import sec_class
+from data.Funciones import *
 try: 
-    from VectorSecuencias import secuencias as secs
+    from data.VectorSecuencias import secuencias as secs
 except: 
     print("""ERROR: No se encotró el archivo VectorSecuencias.py. Intente usando el archivo GenSecClass.py""")
     quit()
 
 print("CARGANDO...")
-print(len(referencia))
 secuencias = []
+referencia = open("data/referencia.txt", "r").read()
+
 for sec in secs:
     secuencia = sec_class()
     secuencia.secuencia = sec[0]

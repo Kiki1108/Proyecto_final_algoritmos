@@ -1,22 +1,20 @@
 import random
-from reference import referencia
 
 bases = ["A", "C", "G", "T", "N"]
 
+referencia = open("data/referencia.txt", "r").read()
+archivo = open("data/secuencias.txt", "w")
 
-archivo = open("secuencias.py", "w")
-
-chains = []
+chain = ""
 for j in range(510):
-    chain = ""
+    if j != 0: chain = chain + "\n"
     for i in referencia:
         if random.randint(0,50) == 1:
             chain = chain + bases[random.randint(0,4)]
         else:
             chain = chain + i
-    chains.append(chain)
  
-archivo.write(f"secuencias = {str(chains)}")
+archivo.write(chain)
 
 archivo.close
 # complejidad: O(N^2)

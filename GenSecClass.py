@@ -1,10 +1,9 @@
-from reference import referencia
-from secuencias import secuencias
-from sec_class import sec_class
-from FinalProyectAlgoritmos.Funciones import *
+from data.sec_class import sec_class
+from data.Funciones import *
 
 print("CARGANDO...")
-
+secuencias = open("data/secuencias.txt", "r").read().split("\n")
+referencia = open("data/referencia.txt", "r").read()
 vector_secuencias = []
 
 # creación de la clase secuencia para cada una de las secuencias
@@ -25,7 +24,7 @@ print("BUSCANDO POLIMORFISMOS")
 es_polimorfismo(vector_secuencias)
 
 print("GENERANDO ARCHIVO")
-archivo = open("VectorSecuencias.py", "w")
+archivo = open("data/VectorSecuencias.py", "w")
 
 chains = []
 for secuencia in vector_secuencias:
