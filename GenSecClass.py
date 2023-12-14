@@ -1,5 +1,6 @@
 from data.sec_class import sec_class
 from data.Funciones import *
+import time
 
 print("CARGANDO...")
 secuencias = open("data/secuencias.txt", "r").read().split("\n")
@@ -21,7 +22,10 @@ buscar_mutaciones(referencia, vector_secuencias)
 
 # Analizar los polimorfirmos
 print("BUSCANDO POLIMORFISMOS")
+#inicio = time.time()
 es_polimorfismo(vector_secuencias)
+#fin = time.time()
+#print(fin-inicio)
 
 print("GENERANDO ARCHIVO")
 archivo = open("data/VectorSecuencias.py", "w")
